@@ -1,24 +1,21 @@
 import React from "react";
 import SearchBar from "./SearchBar";
+import TransitionalText from "./TransitionalText";
+import { Pill } from "lucide-react";
 
 const Hero = () => { 
   return (
-
-
-    
-    <div className="bg-blue-950">   
-      <div className="relative  pb-[110px] pt-[50px] dark:bg-dark lg:pt-[50px] max-w-6xl mx-auto">
+    <div className="bg-blue-950 mt-[160px]" >   
+      <div className="relative  pb-[110px] pt-[50px] dark:bg-dark lg:pt-[50px] max-w-6xl mx-auto xl:text-2xl">
         <div className="container">
           <div className="-mx-4 flex flex-wrap">
-            <div className="w-full px-4 lg:w-5/12">
+            <div className="w-full px-4 lg:w-6/12">
               <div className="hero-content">
-                <h1 className="mb-5 text-4xl font-bold !leading-[1.208] text-gray-50 dark:text-white sm:text-[42px] lg:text-[40px] xl:text-5xl">
-                  Kickstart Startup Website with TailGrids
+                <h1 className="mb-5 text-4xl font-bold !leading-[1.208] text-blue-500 dark:text-white sm:text-[42px] lg:text-[30px] ">
+                 <span>Уулзалтын цагаа</span><span className="mr-2"> <TransitionalText /></span><span>захиалаарай</span>
                 </h1>
                 <p className="mb-8 max-w-[480px] text-base text-body-color dark:text-gray-100">
-                  With TailGrids, business and students thrive together.
-                  Business can perfectly match their staffing to changing demand
-                  throughout the dayed.
+                  Танд эрүүл мэндийн үйлчилгээг цаг алдалгүй хурдан шуурхай үзүүлэх болно. 
                 </p>
                   {/* SEARCH BAR HERE*/}
                   <SearchBar/>
@@ -30,7 +27,7 @@ const Hero = () => {
                       href="/#"
                       className="inline-flex items-center justify-center rounded-md bg-blue-600 px-6 py-3 text-center text-base font-medium text-white hover:bg-blue-700 lg:px-7"
                     >
-                      Get Started
+                     яаралтай эмчийн тусламж 
                     </a>
                   </li>
                   <li>
@@ -39,44 +36,28 @@ const Hero = () => {
                       className=" inline-flex items-center justify-center px-5 py-3 text-center text-base font-medium text-gray-50 hover:text-blue-500 dark:text-gray-500"
                     >
                       <span className="mr-2">
-                        <svg
-                          width="24"
-                          height="25"
-                          viewBox="0 0 24 25"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <circle cx="12" cy="12.6152" r="12" fill="#3758F9" />
-                          <rect
-                            x="7.99893"
-                            y="14.979"
-                            width="8.18182"
-                            height="1.63636"
-                            fill="white"
-                          />
-                          <rect
-                            x="11.2717"
-                            y="7.61523"
-                            width="1.63636"
-                            height="4.09091"
-                            fill="white"
-                          />
-                          <path
-                            d="M12.0898 14.1606L14.9241 11.0925H9.25557L12.0898 14.1606Z"
-                            fill="white"
-                          />
-                        </svg>
+                    <Pill className="flex-shrink-0 h-4 w-4 text-blue-600  " />
                       </span>
-                      Download App
+                      эмчид дахин үзүүлэх
                     </a>
                   </li>
                 </ul>
+                <div className="py-4 pt-8 flex gar-4">
+                  <div className="flex flex-col items-center justify-center">
+                    <span className="font-bold text-gray-50">50</span>
+                    <span className="text-sm text-gray-400 mr-2">Мэргэжлийн эмч</span>
+                  </div>
+                  <div className="flex flex-col items-center justify-center">
+                    <span className="font-bold text-gray-50"> 1800</span>
+                    <span className="text-sm text-gray-400 ">Тогтмол эмчлүүлэгч</span>
+                  </div>
+                </div>
 
                 
               </div>
             </div>
             <div className="hidden px-4 lg:block lg:w-1/12"></div>
-            <div className="w-full px-4 lg:w-6/12">
+            <div className="w-full px-4 lg:w-5/12">
               <div className="lg:ml-auto lg:text-right">
                 <div className="relative z-10 inline-block pt-11 lg:pt-0">
                   <img
@@ -132,12 +113,3 @@ const Hero = () => {
 
 export default Hero;
 
-const SingleImage = ({ href, imgSrc }:{href:string,imgSrc:string}) => {
-  return (
-    <>
-      <a href={href} className="flex w-full items-center justify-center">
-        <img src={imgSrc} alt="brand image" className="h-10 w-full" />
-      </a>
-    </>
-  );
-};
