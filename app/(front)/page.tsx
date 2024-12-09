@@ -5,11 +5,16 @@ import TabbedSection from "@/components/Frontend/TabbedSection";
 
 export default function Home() {
   return (
-<section>
-      <Hero/>
-      <Brands/>
-      <TabbedSection/>
-      <DoctorList/>
-</section>
+    <section className="">
+      <Hero />
+      <Brands />
+      <TabbedSection />
+      <DoctorList />
+      <DoctorList
+        className="bg-white-100 py-8 lg:py-24"
+        title="In-person doctor visit"
+        isInPerson={true}
+      />
+    </section>
   );
 }

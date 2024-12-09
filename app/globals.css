@@ -4,12 +4,6 @@
 
  
 
-body {
-  min-height: 100vh;
-}
-
-
-
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -65,9 +59,6 @@ body {
     --chart-5: 340 75% 55%;
   }
 }
-
-
-
 @layer base {
   * {
     @apply border-border;
@@ -77,3 +68,14 @@ body {
   }
 }
 
+body {
+  min-height: 100vh;
+}
+.linear-bg{
+  background: url("/bg.jpg");
+  /*background-image: linear-gradient(to right, darkblue, skyblue, transparent),url("/bg.jpg");*/
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+
+}
