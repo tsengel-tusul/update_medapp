@@ -11,7 +11,7 @@ w-full max-w-5xl mx-auto bg-white border border-gray-200 rounded-lg shadow  dark
         <div className="hidden md:flex linear-bg ">{/*image*/}</div>
         <div className=""><LoginForm/></div>
       </div>
-      <h2>Login</h2>
+      
     </div>
   );
 }
