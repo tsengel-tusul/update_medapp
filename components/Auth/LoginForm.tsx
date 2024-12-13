@@ -8,7 +8,7 @@ import { useState } from "react";
 import SubmitButton from "../FormInputs/SubmitButton";
 
 export default function LoginForm() {
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading  /*, setIsLoading*/] = useState(false);
   const {
     register,
     handleSubmit,
