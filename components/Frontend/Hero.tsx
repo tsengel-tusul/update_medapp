@@ -2,6 +2,7 @@ import React from "react";
 import SearchBar from "./SearchBar";
 import TransitionalText from "./TransitionalText";
 import { Pill } from "lucide-react";
+import Image from "next/image";
 
 const Hero = () => {
   return (
@@ -68,10 +69,13 @@ const Hero = () => {
             <div className="w-full px-4 lg:w-5/12">
               <div className="lg:ml-auto lg:text-right">
                 <div className="relative z-10 inline-block pt-11 lg:pt-0">
-                  <img
-                    src="https://cdn.tailgrids.com/1.0/assets/images/hero/hero-image-01.png"
+                  <Image
+                    src="/hero-image-01.png"
                     alt="hero"
                     className="max-w-full lg:ml-auto"
+                    layout="responsive"
+                    width={400}
+                    height={400}
                   />
 
                   <span className="absolute -bottom-8 -left-8 z-[-1]">
