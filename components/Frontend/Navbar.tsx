@@ -12,12 +12,12 @@ export default function Navbar() {
     <header className="fixed top-0 bg-white  border-b border-gray-400/30 w-full  z-50 ">
       <nav
         aria-label="Global"
-        className="mx-auto flex max-w-7xl items-center justify-between p-4 lg:px-8"
+        className="mx-auto flex max-w-7xl items-center justify-between px-4 py-2.5 lg:px-8"
       >
         <div className="flex lg:flex-1">
-          <a href="#" className="-m-1.5 p-1.5">
+          <Link href="#" className="-m-1.5 p-1.5">
             <span className="sr-only">Your Company</span>
-          </a>
+          </Link>
         </div>
         <div className="flex lg:hidden">
           <button
@@ -43,7 +43,7 @@ export default function Navbar() {
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <Link
             href="/login"
-            className="text-sm font-semibold leading-6 text-gray-50 bg-blue-700 py-3 px-6 rounded-md"
+            className="text-sm font-semibold leading-6 text-gray-50 bg-blue-700 py-2 px-6 rounded-md"
           >
             Нэвтрэх <span aria-hidden="true">&rarr;</span>
           </Link>

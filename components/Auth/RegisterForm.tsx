@@ -18,7 +18,7 @@ export default function RegisterForm({ role = "USER" }: { role?: UserRole }) {
     formState: { errors },
   } = useForm<RegisterInputProps>();
   async function onSubmit(data: RegisterInputProps) {
-    //console.log(data);
+    console.log(data);
     setIsLoading(true);
 
     data.role = role;
@@ -33,6 +33,9 @@ export default function RegisterForm({ role = "USER" }: { role?: UserRole }) {
 
       }else{
         console.log(user.error);
+        toast.success("User Created Unsuccessfully");
+        reset();
+        setIsLoading(false);
       }
     } catch (error) {
       console.log(error);

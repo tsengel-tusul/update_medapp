@@ -4,9 +4,9 @@ import EmailTemplate from "@/components/Emails/email-template";
 import { prismaClient } from "@/lib/db";
 import { RegisterInputProps } from "@/types/types";
 import bcrypt from "bcrypt";
-import {Resend} from "resend";
+import { Resend } from "resend";
 export async function createUser(formData: RegisterInputProps) {
-  const resend = new Resend(process.env.RESEND_API_KEY);  
+  const resend = new Resend(process.env.RESEND_API_KEY);
   const { fullName, email, phone, password, role } = formData;
   try {
     const existingUser = await prismaClient.user.findUnique({
@@ -41,14 +41,14 @@ export async function createUser(formData: RegisterInputProps) {
       },
     });
     //Send an Email with the Token on the link as a search param
-    const firstName=newUser.name?.split(" ")[0];
+    const firstName = newUser.name?.split(" ")[0];
     const token = newUser.token;
     //const userId = newUser.id;
     const linkText = "Verify your Account ";
     const message =
       "Thank you for registering with Gecko. To complete your registration and verify your email address, please enter the following 6-digit verification code on our website :";
     const sendMail = await resend.emails.send({
-      from: "Medical App <info@jazzafricaadventures.com>",
+      from: "Medical App <batcengelbatzargal64@gmail.com>",
       to: email,
       subject: "Verify Your Email Address",
       react: EmailTemplate({ firstName, token, linkText, message }),
@@ -57,16 +57,47 @@ export async function createUser(formData: RegisterInputProps) {
     console.log(sendMail);
     console.log(newUser);
 
-
     return {
-        data: newUser,
-        error:null, 
-        status: 200,
-      };
+      data: newUser,
+      error: null,
+      status: 200,
+    };
   } catch (error) {
     console.log(error);
     return {
       error: "Something went wrong",
     };
+  }
+}
+
+export async function getUserById(id: string) {
+  if (id) {
+    try {
+      const user = await prismaClient.user.findUnique({
+        where: {
+          id,
+        },
+      });
+      return user;
+    } catch (error) {
+      console.log(error);
+    }
+  }
+}
+export async function updateUserById(id: string) {
+  if (id) {
+    try {
+      const updatedUser = await prismaClient.user.update({
+        where: {
+          id,
+        },
+        data: {
+          isVerfied:true
+        },
+      });
+      return updatedUser;
+    } catch (error) {
+      console.log(error);
+    }
   }
 }
